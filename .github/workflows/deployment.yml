@@ -18,9 +18,10 @@ jobs:
         script: |
           cd /home/ubuntu
           if [ ! -d "infra-deploy" ]; then
-            git clone https://github.com/your-org/infra-deploy.git
+            git clone https://${{ secrets.GITHUB_USERNAME }}:${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN }}@github.com/<ORG_OR_USERNAME>/infra-deploy.git
           fi
           cd infra-deploy
           git pull origin main
           docker-compose pull
           docker-compose up -d
+

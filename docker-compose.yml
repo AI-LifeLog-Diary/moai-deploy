@@ -11,6 +11,8 @@ services:
   fast-api-chatbot:
     image: minjin0610/moai-fast-api-chatbot:latest
     container_name: moai-fast-api-chatbot
+    env_file:
+      - .env.prod
     ports:
       - "8000:8000"
     restart: unless-stopped

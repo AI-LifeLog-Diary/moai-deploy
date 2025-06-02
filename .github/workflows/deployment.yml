@@ -18,7 +18,7 @@ jobs:
         script: |
           cd /home/ubuntu
           if [ ! -d "infra-deploy" ]; then
-            git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@github.com/AI-LifeLog-Diary/moia-deploy.git
+            git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@github.com/AI-LifeLog-Diary/moai-deploy.git
           fi
           cd infra-deploy
           git pull origin main

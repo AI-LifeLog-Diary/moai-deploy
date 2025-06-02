@@ -12,7 +12,7 @@ services:
     image: minjin0610/moai-fast-api-chatbot:latest
     container_name: moai-fast-api-chatbot
     env_file:
-      - .env.prod
+      - /home/ubuntu/moai-deploy/.env.prod
     ports:
       - "8000:8000"
     restart: unless-stopped

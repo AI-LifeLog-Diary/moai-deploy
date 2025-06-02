@@ -1,8 +1,8 @@
 name: Deploy to EC2
 
 on:
-  push:
-    branches: [ "main" ]
+  repository_dispatch:
+    types: [deploy]
 
 jobs:
   deploy:
@@ -17,7 +17,7 @@ jobs:
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
           cd /home/ubuntu
-          if [ ! -d "infra-deploy" ]; then
+          if [ ! -d "moai-deploy" ]; then
             git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@github.com/AI-LifeLog-Diary/moai-deploy.git
           fi
           cd moai-deploy

@@ -20,7 +20,7 @@ jobs:
           if [ ! -d "infra-deploy" ]; then
             git clone https://${{ secrets.GH_USERNAME }}:${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@github.com/AI-LifeLog-Diary/moai-deploy.git
           fi
-          cd infra-deploy
+          cd moai-deploy
           git pull origin main
           docker-compose pull
           docker-compose up -d

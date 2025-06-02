@@ -2,15 +2,15 @@ version: "3.8"
 
 services:
   spring-backend:
-    image: minjin0610/spring-backend:latest
-    container_name: spring-backend
+    image: minjin0610/moai-spring-backend:latest
+    container_name: moai-spring-backend
     ports:
       - "8080:8080"
     restart: unless-stopped
 
   fast-api-chatbot:
-    image: minjin0610/fast-api-app:latest
-    container_name: fast-api-chatbot
+    image: minjin0610/moai-fast-api-chatbot:latest
+    container_name: moai-fast-api-chatbot
     ports:
       - "8000:8000"
     restart: unless-stopped

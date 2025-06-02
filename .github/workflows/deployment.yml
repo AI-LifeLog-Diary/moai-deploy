@@ -25,6 +25,5 @@ jobs:
           
           # Docker Hub 로그인
           echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-  
           docker-compose pull
-          docker-compose up -d
+          docker-compose up -d --force-recreate
